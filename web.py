@@ -43,8 +43,8 @@ def load_assets():
     scaler_name = 'scaler.pkl'
     
     try:
-        model = joblib.load(model_name)
-        scaler = joblib.load(scaler_name)
+        model = joblib.load(os.path.join(os.path.dirname(__file__), model_name))
+        scaler = joblib.load(os.path.join(os.path.dirname(__file__), scaler_name))
         return model, scaler
     except Exception as e:
         st.error(f"Error detail: {e}")
