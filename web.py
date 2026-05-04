@@ -9,6 +9,8 @@ from rembg import remove
 from PIL import Image
 import io
 
+setup_assets()
+
 st.set_page_config(
     page_title="Tomato AI - Kesegaran",
     page_icon="🍅",
@@ -35,7 +37,7 @@ def setup_assets():
         with open(css_path) as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-setup_assets()
+
 
 @st.cache_resource
 def load_assets():
