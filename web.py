@@ -15,7 +15,7 @@ st.set_page_config(
     layout="centered"
 )
 
-def setup_assets():
+#def setup_assets():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     bg_path = os.path.join(current_dir, "bg_tomat.jpg")
     st_static_path = os.path.join(os.path.dirname(st.__file__), "static")
