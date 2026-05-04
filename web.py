@@ -21,8 +21,8 @@ bg_path = os.path.join(current_dir, "bg_tomat.jpg")
 st_static_path = os.path.join(os.path.dirname(st.__file__), "static")
 target_path = os.path.join(st_static_path, "bg_tomat.jpg")
 if os.path.exists(bg_path) and not os.path.exists(target_path):
-try: shutil.copy(bg_path, target_path)
-except: pass
+    try: shutil.copy(bg_path, target_path)
+    except: pass
     
     css_path = os.path.join(current_dir, "style.css")
     if os.path.exists(css_path):
