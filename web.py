@@ -37,7 +37,7 @@ def setup_assets():
 
 setup_assets()
 
-@st.cache_resource
+
 def load_assets():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     try:
