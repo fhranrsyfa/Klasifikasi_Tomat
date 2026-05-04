@@ -40,11 +40,22 @@ setup_assets()
 @st.cache_resource
 def load_assets():
     current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    model_path = os.path.join(current_dir, 'model_tomat.pkl')
+    scaler_path = os.path.join(current_dir, 'scaler.pkl')
+    
+    if not os.path.exists(model_path):
+        st.error(f"File MODEL tidak ada di: {model_path}")
+    if not os.path.exists(scaler_path):
+        st.error(f"File SCALER tidak ada di: {scaler_path}")
+        
     try:
-        model = joblib.load(os.path.join(current_dir, 'model_tomat.pkl'))
-        scaler = joblib.load(os.path.join(current_dir, 'scaler.pkl'))
+        model = joblib.load(model_path)
+        scaler = joblib.load(scaler_path)
         return model, scaler
-    except: return None, None
+    except Exception as e:
+        st.error(f"Terjadi kesalahan teknis saat loading: {e}")
+        return None, None
 
 model, scaler = load_assets()
 
