@@ -15,15 +15,21 @@ st.set_page_config(
     layout="centered"
 )
 
-#def setup_assets():
-current_dir = os.path.dirname(os.path.abspath(__file__))
-bg_path = os.path.join(current_dir, "bg_tomat.jpg")
-st_static_path = os.path.join(os.path.dirname(st.__file__), "static")
-target_path = os.path.join(st_static_path, "bg_tomat.jpg")
-if os.path.exists(bg_path) and not os.path.exists(target_path):
-    try: shutil.copy(bg_path, target_path)
-    except: pass
+def setup_assets():
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("https://raw.githubusercontent.com/fhranrsyfa/Klasifikasi_Tomat/main/bg_tomat.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     css_path = os.path.join(current_dir, "style.css")
     if os.path.exists(css_path):
         with open(css_path) as f:
