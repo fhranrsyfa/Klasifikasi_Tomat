@@ -6,3 +6,4 @@ scikit-image
 rembg
 Pillow
 onnxruntime
+scikit-learn
