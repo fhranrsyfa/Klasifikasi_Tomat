@@ -20,20 +20,20 @@ def setup_assets():
         f"""
         <style>
         .stApp {{
-            background-image: url("https://raw.githubusercontent.com/fhranrsyfa/Klasifikasi_Tomat/main/bg_tomat.jpg");
-            background-attachment: fixed;
-            background-size: cover;
+            background-image: url("https://raw.githubusercontent.com/fhranrsyfa/Klasifikasi_Tomat/main/bg_tomat.jpg") !important;
+            background-attachment: fixed !important;
+            background-size: cover !important;
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
     
-    #current_dir = os.path.dirname(os.path.abspath(__file__))
-    #css_path = os.path.join(current_dir, "style.css")
-    #if os.path.exists(css_path):
-        #with open(css_path) as f:
-            #st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    css_path = os.path.join(current_dir, "style.css")
+    if os.path.exists(css_path):
+        with open(css_path) as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 setup_assets()
 
