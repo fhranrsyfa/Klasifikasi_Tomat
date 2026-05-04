@@ -5,3 +5,4 @@ joblib
 scikit-image
 rembg
 Pillow
+onnxruntime
