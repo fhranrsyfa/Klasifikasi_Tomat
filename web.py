@@ -49,6 +49,7 @@ def load_assets():
     except Exception as e:
         st.error(f"Error detail: {e}")
         return None, None
+model, scaler = load_assets()
 
 def extract_features_with_stats(image_gray):
     orientasi_derajat = [0, 45, 90, 135]
